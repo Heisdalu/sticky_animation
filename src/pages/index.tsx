@@ -1,5 +1,4 @@
-import { MutableRefObject, useEffect, useRef } from "react";
-import Item from "./components/Item";
+import Item from "@/components/Item";
 
 const colors = [
   { name: "Teal", hex: "#008080" },
