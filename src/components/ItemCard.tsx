@@ -29,30 +29,11 @@ const ItemCard = ({ obj }: ObjTypes) => {
 
   const [state, setState] = useState({ top: 0, height: 0 });
 
-  const scale = useTransform(scrollY, (l) => {
-    if (l < state.top) {
-      return `translate3d(0px, 0px, 0px)`;
-    }
-
-    if (l >= state.top && l <= state.top + state.height) {
-      const d = linear({
-        x: l,
-        inputMin: state.top,
-        inputMax: state.top + state.height,
-        outMax: 0.9,
-        outMin: 1,
-      });
-
-      return `translate3d(0px, 0px, 0px) scale(${d})`;
-    }
-
-    return `translate3d(0px, 0px, 0px) scale(${0.9})`;
-  });
-  // const scale = useTransform(
-  //   scrollY,
-  //   [state.top, state.top + state.height],
-  //   [1, 0.9]
-  // );
+  const scale = useTransform(
+    scrollY,
+    [state.top, state.top + state.height],
+    [1, 0.9]
+  );
   const borderRadius = useTransform(
     scrollY,
     [state.top, state.top + state.height],
@@ -114,7 +95,7 @@ const ItemCard = ({ obj }: ObjTypes) => {
         style={{
           backgroundColor: obj.hex,
           borderRadius,
-          transform: scale,
+          scale,
           // scale,
           filter,
           // opacity: brightness,
