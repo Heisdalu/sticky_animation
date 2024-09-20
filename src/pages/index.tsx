@@ -1,4 +1,4 @@
-import Item from "../components/Item";
+import ItemCard from "@/components/ItemCard";
 
 const colors = [
   { name: "Teal", hex: "#008080" },
@@ -16,7 +16,7 @@ const Lol = () => {
           Scroll Down
         </div>
         {colors.map((el, i) => (
-          <Item key={el.name} obj={{ ...el, id: i }} />
+          <ItemCard key={el.name} obj={{ ...el, id: i }} />
         ))}
       </div>
       <div className="border-[3px] border-black h-[100vh] text-white text-[2rem] grid place-items-center">
