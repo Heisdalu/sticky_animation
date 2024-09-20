@@ -102,7 +102,6 @@ const Item = ({ obj }: ObjTypes) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(state, obj.name);
   return (
     <div
       key={obj.name}
