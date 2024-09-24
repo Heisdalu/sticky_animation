@@ -1,4 +1,10 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { log } from "console";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 interface ObjTypes {
@@ -32,7 +38,7 @@ const ItemCard = ({ obj }: ObjTypes) => {
   const scale = useTransform(
     scrollY,
     [state.top, state.top + state.height],
-    [1, 0.9]
+    [1, 0.8]
   );
   const borderRadius = useTransform(
     scrollY,
@@ -61,14 +67,16 @@ const ItemCard = ({ obj }: ObjTypes) => {
     return `brightness(${0.5})`;
   });
 
-  // borderRadius.
+  //   useMotionValueEvent(scrollY, "change", (last) => {
+  //     console.log("chnage", last);
+  //   });
 
   useEffect(() => {
     const func = () => {
       if (mtnRef.current) {
         const d = mtnRef.current as HTMLDivElement;
         setState({
-          top: d.getBoundingClientRect().top,
+          top: d.getBoundingClientRect().top + 30,
           height: window.innerHeight,
         });
       }
@@ -77,9 +85,21 @@ const ItemCard = ({ obj }: ObjTypes) => {
       func();
     }
 
-    window.addEventListener("resize", func);
+    const d = () => {
+      window.scrollTo({
+        top: 0,
+      });
 
-    return () => window.removeEventListener("resize", func);
+      // kindly reset again, since i am finding it hard do debug positin issue... skill issue.. hahahah
+
+      func();
+    };
+
+    window.addEventListener("resize", d);
+
+    return () => {
+      window.removeEventListener("resize", d);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

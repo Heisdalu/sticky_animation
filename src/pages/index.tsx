@@ -7,6 +7,10 @@ const colors = [
   { name: "Goldenrod", hex: "#DAA520" },
   { name: "Crimson", hex: "#DC143C" },
   { name: "Forest Green", hex: "#228B22" },
+
+  //framer debug...
+  //layout animation....nexted modals
+  // animated nav tab with width animations
 ];
 const Lol = () => {
   return (
