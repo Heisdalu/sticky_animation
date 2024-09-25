@@ -1,9 +1,13 @@
+import Layout from "@/components/layout/layout";
+import Modal from "@/components/Modal/Modal";
 import Lol from "@/components/Scrolling/main";
 
 const Index = () => {
   return (
     <div>
-      <Lol />
+      {/* <Layout /> */}
+      {/* < Lol /> */}
+      <Modal />
     </div>
   );
 };
