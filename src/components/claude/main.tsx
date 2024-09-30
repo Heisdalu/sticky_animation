@@ -8,7 +8,7 @@ const items = [
 ];
 
 export default function FramerMotionDemo() {
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
 
   return (
     <div className="p-4">
@@ -17,7 +17,7 @@ export default function FramerMotionDemo() {
         {items.map((item) => (
           <motion.div
             key={item.id}
-            layoutId={item.id}
+            layoutId={`${item.id}`}
             onClick={() => setSelectedId(item.id)}
             className="p-4 bg-white rounded shadow cursor-pointer"
           >
@@ -33,7 +33,7 @@ export default function FramerMotionDemo() {
       <AnimatePresence>
         {selectedId && (
           <motion.div
-            layoutId={selectedId}
+            layoutId={`${selectedId}`}
             className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
           >
             <motion.div className="w-full max-w-sm p-8 bg-white rounded-lg">

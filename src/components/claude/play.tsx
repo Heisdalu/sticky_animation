@@ -75,7 +75,7 @@ const Play = () => {
                       }}
                       className="rounded-[10px] border-[1px] border-black py-[0.5rem] px-[1rem]"
                     >
-                      yes
+                      yes origin 
                     </button>
                     <button
                       onClick={(e) => {
