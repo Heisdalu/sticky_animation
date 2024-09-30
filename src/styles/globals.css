@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .okay div:nth-child(1) {
+    grid-area: 1/1/2/2;
+  }
+  .okay div:nth-child(2) {
+    grid-area: 1/2/2/-1;
+  }
+  .okay div:nth-child(3) {
+    grid-area: 2/1/2/3;
+  }
+  .okay div:nth-child(4) {
+    grid-area: 2/3;
+    /* background-color: #000000a0; */
+  }
+}

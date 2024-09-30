@@ -23,7 +23,7 @@ const Modal = () => {
       <button onClick={() => setScale((l) => !l)}>lol</button>
       <motion.div
         layout
-        transition={{ duration: 0.3 }}
+        // transition={{ duration: 0.3 }}
         variants={varaint}
         animate={scale ? "hide" : "show"}
         className="w-[300px] overflow-hidden p-[1rem] rounded-[20px] flex justify- items-center flex-col text-center space-y-[1rem] bg-gray-400  border-black"

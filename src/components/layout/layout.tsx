@@ -67,12 +67,12 @@ function Layout() {
             <div
               key={el}
               onMouseEnter={() => setNo(i)}
-              className="relative rounded-[50px] border-[1px] py-[0.5rem] grid place-items-center w-[70px]"
+              className="relative rounded-[10px] border-[1px] py-[0.5rem] grid place-items-center w-[70px]"
             >
               {no === i && (
                 <motion.div
                   layoutId="under"
-                  className="z-[1] rounded-[50px] absolute top-[0] left-[0] h-[100%] w-[100%] bg-gray-200"
+                  className="z-[1] rounded-[10px] absolute top-[0] left-[0] h-[100%] w-[100%] bg-gray-200"
                 ></motion.div>
               )}
               <div className="z-[2]">{el}</div>
