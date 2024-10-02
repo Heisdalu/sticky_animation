@@ -33,7 +33,7 @@ const Display = ({ time, id }: { time: string; id: string }) => {
           opacity: 0,
           y: -10,
           transition: {
-            duration: 0.1,
+            duration: 0.05,
           },
         }}
         key={`${id}-1-${time[1]}`}
