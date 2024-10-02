@@ -55,7 +55,7 @@ const Play = () => {
                 }}
                 layoutId={id}
                 style={{ borderRadius: "20px" }}
-                className="z-[10] bg-white rounded-[20px] flex items-center justify-center h-[100px] w-[200px] fixed border-[0px] lg:h-[200px] lg:w-[350px] border-black"
+                className="z-[10] bg-white rounded-[20px] flex items-center justify-center h-[100px] w-[200px] fixed border-[0px] lg:h-[300px] lg:w-[500px] border-black"
               >
                 <motion.div
                   className="space-y-[1rem] flex flex-col  justify-center items-center"
@@ -75,7 +75,7 @@ const Play = () => {
                       }}
                       className="rounded-[10px] border-[1px] border-black py-[0.5rem] px-[1rem]"
                     >
-                      yes origin 
+                      yes
                     </button>
                     <button
                       onClick={(e) => {
