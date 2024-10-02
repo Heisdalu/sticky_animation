@@ -48,7 +48,7 @@ const Countdown: React.FC<CountdownProps> = ({ initialSeconds }) => {
   return (
     <div>
       <h1>Countdown</h1>
-      <div className="p-[1rem] text-[8rem] flex justify-center">
+      <div className="p-[1rem] text-[2rem] lg:text-[8rem] flex justify-center">
         <Display time={hrs} id="=hrs" />:
         <Display time={mins} id="=mins" />:
         <Display time={secs} id="=secs" />
