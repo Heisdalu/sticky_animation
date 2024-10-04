@@ -19,7 +19,7 @@ const first: Variants = {
     y: 0,
     opacity: 1,
     scale: 1,
-    transition: { duration: 3, type: "spring", stiffness: 300, damping: 20 },
+    transition: { duration: 0.3, type: "spring", stiffness: 300, damping: 20 },
   },
   hidden: {
     y: 30,
