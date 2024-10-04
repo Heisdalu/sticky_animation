@@ -3,6 +3,7 @@ import Modal from "@/components/Modal/Modal";
 import Lol from "@/components/Scrolling/main";
 import Claude from "@/components/claude/index";
 import Timer from "@/components/timer/main";
+import Drag from "@/components/Drag/main";
 
 const Index = () => {
   return (
@@ -11,7 +12,8 @@ const Index = () => {
       {/* <Lol /> */}
       {/* <Modal /> */}
       {/* <Claude /> */}
-      <Timer initialSeconds={1000} />
+      {/* <Timer initialSeconds={1000} /> */}
+      <Drag />
     </div>
   );
 };
