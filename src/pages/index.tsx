@@ -8,11 +8,11 @@ import Drag from "@/components/Drag/main";
 const Index = () => {
   return (
     <div>
-      {/* <Layout /> */}
-      {/* <Lol /> */}
-      {/* <Modal /> */}
-      {/* <Claude /> */}
-      {/* <Timer initialSeconds={1000} /> */}
+      <Layout />
+      <Lol />
+      <Modal />
+      <Claude />
+      <Timer initialSeconds={1000} />
       <Drag />
     </div>
   );
