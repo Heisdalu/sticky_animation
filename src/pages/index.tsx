@@ -5,6 +5,7 @@ import Claude from "@/components/claude/index";
 import Timer from "@/components/timer/main";
 import Drag from "@/components/Drag/main";
 import Hover from "@/components/Hover/main";
+import Velocity from "@/components/Velocity/main";
 
 const Index = () => {
   return (
@@ -15,7 +16,8 @@ const Index = () => {
       <Claude />
       <Timer initialSeconds={1000} /> */}
       {/* <Drag /> */}
-      <Hover />
+      {/* <Hover /> */}
+      <Velocity />
     </div>
   );
 };
