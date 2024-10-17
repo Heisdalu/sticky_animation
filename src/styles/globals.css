@@ -21,3 +21,35 @@
     @apply h-[100vh] grid place-items-center;
   }
 }
+
+.slide {
+  border: 1px sol;
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.slide:nth-child(1) {
+  background-color: rgb(88, 226, 226);
+}
+.slide:nth-child(2) {
+  background-color: rgb(221, 226, 88);
+}
+
+.slide:nth-child(3) {
+  background-color: rgb(9, 242, 172);
+}
+
+.slide:nth-child(4) {
+  background-color: rgb(244, 16, 149);
+}
+.slide:nth-child(5) {
+  background-color: rgb(94, 30, 212);
+}

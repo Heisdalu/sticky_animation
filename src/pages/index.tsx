@@ -6,6 +6,7 @@ import Timer from "@/components/timer/main";
 import Drag from "@/components/Drag/main";
 import Hover from "@/components/Hover/main";
 import Velocity from "@/components/Velocity/main";
+import Pin from "@/components/pinning/main";
 
 const Index = () => {
   return (
@@ -17,7 +18,8 @@ const Index = () => {
       <Timer initialSeconds={1000} /> */}
       {/* <Drag /> */}
       {/* <Hover /> */}
-      <Velocity />
+      {/* <Velocity /> */}
+      <Pin />
     </div>
   );
 };
