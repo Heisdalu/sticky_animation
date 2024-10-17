@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Item from "./item";
-import { motion, MotionConfig, Variants } from "framer-motion";
 
 const Marquee = () => {
   const [state, setState] = useState(true);

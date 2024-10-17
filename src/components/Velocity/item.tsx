@@ -9,7 +9,17 @@ import {
   Variants,
 } from "framer-motion";
 
-const MarqueeItem = ({ images, from, to, state }) => {
+const MarqueeItem = ({
+  images,
+  from,
+  to,
+  state,
+}: {
+  images: (string | number)[];
+  from: string | number;
+  to: string | number;
+  state: any;
+}) => {
   console.log(state);
   const controls = useAnimationControls();
 
