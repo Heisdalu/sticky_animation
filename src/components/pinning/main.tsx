@@ -12,7 +12,7 @@ import useMeasure from "react-use-measure";
 const HorizontalScrollSection = () => {
   const ref = useRef(null);
   const [mref, { width }] = useMeasure({
-    debounce: 1,
+    debounce: 10,
     scroll: false,
   });
   const { scrollYProgress } = useScroll({
@@ -24,9 +24,9 @@ const HorizontalScrollSection = () => {
   // Calculate the horizontal shift based on scroll position
   const x = useTransform(scrollYProgress, [0, 1], [0, -(width + 17) * 4]);
 
-  useMotionValueEvent(x, "change", (l) => {
-    console.log(l, "scrolly");
-  });
+//   useMotionValueEvent(x, "change", (l) => {
+//     console.log(l, "scrolly");
+//   });
 
 //   console.log(width, (width + 17) * 4);
 
