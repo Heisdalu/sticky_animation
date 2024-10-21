@@ -21,8 +21,13 @@ const HorizontalScrollSection = () => {
     offset: ["start start", "end end"],
   }); // Track vertical scroll progress
 
+  const spring = useSpring(scrollYProgress, {
+    stiffness: 77.8,
+    damping: 15.3,
+    mass: 1,
+  });
   // Calculate the horizontal shift based on scroll position
-  const x = useTransform(scrollYProgress, [0, 1], [0, -(width + 17) * 4]);
+  const x = useTransform(spring, [0, 1], [0, -(width + 16.7) * 4]);
 
   //   useMotionValueEvent(x, "change", (l) => {
   //     console.log(l, "scrolly");
@@ -42,7 +47,13 @@ const HorizontalScrollSection = () => {
         className="overflow-x-clip h-[500vh] border-[0px] border-red-400"
       >
         <motion.div
-          className=" flex sticky top-[0]  space-x-[16px] flex-shrink-0 border-[2px] border-red-500 "
+          transition={{
+            type: "spring",
+            stiffness: 77.8,
+            damping: 10,
+            mass: 1,
+          }}
+          className="will-change-transform flex sticky top-[0]  space-x-[16px] flex-shrink-0 "
           style={{ x, width: `${width * 5 + 16.5 * 4}px` }} // Move the container horizontally as the user scrolls
         >
           <div ref={mref} className="slide">
