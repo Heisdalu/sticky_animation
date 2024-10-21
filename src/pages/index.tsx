@@ -7,7 +7,7 @@ import Drag from "@/components/Drag/main";
 import Hover from "@/components/Hover/main";
 import Velocity from "@/components/Velocity/main";
 import Pin from "@/components/pinning/main";
-import Button from "@/components/Button/main";
+// import Button from "@/components/Button/main";
 
 const Index = () => {
   return (
@@ -20,8 +20,8 @@ const Index = () => {
       {/* <Drag /> */}
       {/* <Hover /> */}
       {/* <Velocity /> */}
-      {/* <Pin /> */}
-      <Button />
+      <Pin />
+      {/* <Button /> */}
     </div>
   );
 };

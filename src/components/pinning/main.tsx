@@ -24,11 +24,11 @@ const HorizontalScrollSection = () => {
   // Calculate the horizontal shift based on scroll position
   const x = useTransform(scrollYProgress, [0, 1], [0, -(width + 17) * 4]);
 
-//   useMotionValueEvent(x, "change", (l) => {
-//     console.log(l, "scrolly");
-//   });
+  //   useMotionValueEvent(x, "change", (l) => {
+  //     console.log(l, "scrolly");
+  //   });
 
-//   console.log(width, (width + 17) * 4);
+  //   console.log(width, (width + 17) * 4);
 
   // Adjust values based on desired behavior
 
@@ -37,7 +37,10 @@ const HorizontalScrollSection = () => {
       <div className="bg-[#3fa] h-[100vh] grid place-items-center">
         scroll Down
       </div>{" "}
-      <div ref={ref} className=" h-[500vh] border-[0px] border-red-400">
+      <div
+        ref={ref}
+        className="overflow-x-clip h-[500vh] border-[0px] border-red-400"
+      >
         <motion.div
           className=" flex sticky top-[0]  space-x-[16px] flex-shrink-0 border-[2px] border-red-500 "
           style={{ x, width: `${width * 5 + 16.5 * 4}px` }} // Move the container horizontally as the user scrolls
