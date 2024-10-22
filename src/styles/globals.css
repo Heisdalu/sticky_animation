@@ -51,5 +51,13 @@ body {
   background-color: rgb(244, 16, 149);
 }
 .slide:nth-child(5) {
-  background-color: rgb(94, 30, 212);
+  background-color: #5e1ed4;
 }
+
+.gradient {
+  /* clip-path: circle(11.2% at 50% 50%); */
+  /* clip-path: circle(100%); */
+}
+
+
+/* .mask:nth-child() */
