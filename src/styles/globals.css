@@ -59,5 +59,11 @@ body {
   /* clip-path: circle(100%); */
 }
 
-
 /* .mask:nth-child() */
+
+.test {
+  mask-image: url("../../public/mask.svg");
+  background-color: black;
+  mask-repeat: no-repeat;
+  mask-size: 0px;
+}

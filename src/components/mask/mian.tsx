@@ -10,6 +10,7 @@ import {
   useSpring,
 } from "framer-motion";
 import Other from "./other";
+import Other2 from "./other2";
 
 const Main = () => {
   const [scope, animate] = useAnimate();
@@ -79,7 +80,8 @@ const Main = () => {
         </div>
       </div> */}
 
-      <Other />
+      {/* <Other /> */}
+      <Other2 />
     </>
   );
 };
