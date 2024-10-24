@@ -67,3 +67,7 @@ body {
   mask-repeat: no-repeat;
   mask-size: 0px;
 }
+
+.cent {
+  @apply h-[100vh] grid place-items-center;
+}

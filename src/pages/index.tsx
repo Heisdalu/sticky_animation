@@ -10,10 +10,11 @@ import Pin from "@/components/pinning/main";
 import Button from "@/components/Button/main";
 import Tut from "@/components/Tutorial/main";
 import Mask from "@/components/mask/mian";
+import { Variants, motion } from "framer-motion";
 
 const Index = () => {
   return (
-    <div>
+    <div className="i">
       {/* <Layout />
       <Lol />
       <Modal />
@@ -25,7 +26,8 @@ const Index = () => {
       {/* <Pin /> */}
       {/* <Button /> */}
       {/* <Tut /> */}
-      <Mask />
+      {/* <Mask /> */}
+      <div className="bg-gray-300 cen">Home is home</div>
     </div>
   );
 };

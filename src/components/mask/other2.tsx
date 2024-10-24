@@ -53,14 +53,14 @@ const Other2 = () => {
 
   return (
     <>
-      <motion.div
+      {/* <motion.div
         style={{
           x,
           y,
         }}
         className="z-[2] absolute h-[10px] w-[10px] bg-black rounded-full"
-      ></motion.div>
-      <div className="text-[1.5rem] relative cursor- h-[100vh] border-[5px]">
+      ></motion.div> */}
+      <div className="text-[1.5rem] relative cursor-none h-[100vh] border-[5px]">
         <motion.div
           style={{
             WebkitMaskPosition: d,
@@ -83,7 +83,7 @@ const Other2 = () => {
             }}
             onMouseLeave={() => {
               console.log("leave");
-              setState(0);
+              setState(10);
             }}
             className="w-[600px] text-white z-[10]"
           >
