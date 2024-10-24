@@ -8,7 +8,7 @@ import {
 import { MouseEvent, useEffect } from "react";
 import useMeasure from "react-use-measure";
 
-function transformToPercentage(value, minInput = 100, maxInput = 300) {
+function transformToPercentage(value: number, minInput = 100, maxInput = 300) {
   // Clamp the value between min and max input
   const clampedValue = Math.min(Math.max(value, minInput), maxInput);
 
@@ -32,7 +32,7 @@ const Other = () => {
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    const moveOut = (e: MouseEvent) => {
+    const moveOut = (e: globalThis.MouseEvent) => {
       clearTimeout(timer);
       timer = setTimeout(() => {
         x.set(e.clientX);
