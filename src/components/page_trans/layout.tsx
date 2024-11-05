@@ -35,7 +35,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     exit: {
       y: 0,
       transition: {
-        duration: 1,
+        duration: 0.5,
       },
     },
   };

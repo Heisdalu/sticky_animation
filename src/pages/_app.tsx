@@ -10,7 +10,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <div>
-        <AnimatePresence mode="wait" initial={true}>
+        <AnimatePresence mode="wait" initial={false}>
           <Layout key={router.asPath}>
             <Component {...pageProps} />
           </Layout>
