@@ -4,14 +4,25 @@ import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import gql from "graphql-tag";
 import { categories, products } from "./utils/data";
 
+let value = "sayyyy";
+
 // Define your schema
 const typeDefs = gql`
   type Query {
-    hello: String
+    hello(filter: Goods!): String
+    say: String!
     products: [Product!]!
     product(id: ID!): Product
     categories: [Category!]!
     category(id: ID!): Category
+  }
+
+  type Mutation {
+    say(id: ID!): String!
+  }
+
+  input Goods {
+    amount: Int!
   }
 
   type Product {
@@ -36,12 +47,17 @@ const typeDefs = gql`
 // Define your resolvers
 const resolvers = {
   Query: {
-    hello: () => "hello world!!",
+    say: () => value,
+    hello: (_: unknown, args: any) => {
+      console.log(args);
+
+      return "hello world!!";
+    },
     products: () => products,
     product: (_: any, args: { id: string }) =>
       products.find((el) => el.id === args.id),
     categories: (c: any, g: any, ctx: any) => {
-    //   console.log(ctx.s());
+      //   console.log(ctx.s());
       return ctx.s().categories;
     },
 
@@ -59,6 +75,13 @@ const resolvers = {
     category: (p: any, args: { id: any }, ctx: any) => {
       //   console.log(ctx);
       return categories.filter((el) => el.id === p.categoryId);
+    },
+  },
+
+  Mutation: {
+    say: (_: any, args: any) => {
+      value = args.id;
+      return value;
     },
   },
 };
