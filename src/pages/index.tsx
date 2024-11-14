@@ -12,10 +12,11 @@ import Tut from "@/components/Tutorial/main";
 import Mask from "@/components/mask/mian";
 import { Variants, motion } from "framer-motion";
 import Grid from "@/components/grid/grdi";
+import Cover from "@/components/Cover/Cover";
 
 const Index = () => {
   return (
-    <div className="i">
+    <div className="">
       {/* <Layout />
       <Lol />
       <Modal />
@@ -29,7 +30,8 @@ const Index = () => {
       {/* <Tut /> */}
       {/* <Mask /> */}
       {/* <div className="bg-gray-300 cen">Home is home</div> */}
-      <Grid />
+      {/* <Grid /> */}
+      <Cover />
     </div>
   );
 };
