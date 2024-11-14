@@ -30,8 +30,8 @@ const Index = () => {
       {/* <Tut /> */}
       {/* <Mask /> */}
       {/* <div className="bg-gray-300 cen">Home is home</div> */}
-      {/* <Grid /> */}
-      <Cover />
+      <Grid />
+      {/* <Cover /> */}
     </div>
   );
 };
