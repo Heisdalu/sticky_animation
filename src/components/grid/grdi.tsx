@@ -7,6 +7,7 @@ import {
   useAnimate,
   Variants,
 } from "framer-motion";
+import { TrashBack, TrashFront } from "./trash-assets";
 
 const Grid = () => {
   const [state, setState] = useState(false);
@@ -85,11 +86,6 @@ const Grid = () => {
                           }}
                           exit={{
                             opacity: 0,
-                            // rotate: imageSelected.includes(el)
-                            //   ? el % 2 === 0
-                            //     ? "-10deg"
-                            //     : "10deg"
-                            //   : "0",
                             transition: {
                               duration: 0.2,
                             },
@@ -119,23 +115,46 @@ const Grid = () => {
           {state && (
             <motion.div className="absolute top-0 z-[10] left-0 h-[50vh] w-[100%]">
               <div className="relative h-[300px] w-[100%] flex justify-center items-center">
-                <div className="absolute h-[200px] w-[200px]  flex items-center justify-center">
-                  <div className="flex justify-center items-center">
-                    {imageSelected.map((el, i) => (
-                      <motion.div
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          rotate: i % 2 === 0 ? -10 : 10,
-                        }}
-                        key={`child-${el}`}
-                        layoutId={`child-${el}`}
-                        className="flex items-center justify-center h-[50px] w-[50px] absolute bg-gray-300 rounded-[10px]"
-                      >
-                        {el}
-                      </motion.div>
-                    ))}
-                  </div>
+                <div className="absolute h-[200px] w-[200px] bg flex items-center justify-center">
+                  <motion.div className="flex justify-center items-center h-[100px] w-[100px]">
+                    <div className=" absolute h-[70px] w-[70px]">
+                      <span className="h-[100%] w-[100%] absolute top-[0] z-[3]">
+                        <TrashFront />
+                      </span>
+                      <span className="z-[1] h-[100%] w-[100%] absolute top-[0]">
+                        {" "}
+                        <TrashBack />
+                      </span>
+                    </div>
+                    <motion.div
+                      key={"contain-1"}
+                      initial={{
+                        y: -100,
+                      }}
+                      animate={{
+                        y: -20,
+                        transition: {
+                          delay: 0.2,
+                        },
+                      }}
+                      className="z-[2] h-[100%] w-[100%] flex items-center justify-center"
+                    >
+                      {imageSelected.map((el, i) => (
+                        <motion.div
+                          style={{
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            rotate: i % 2 === 0 ? -10 : 10,
+                          }}
+                          key={`child-${el}`}
+                          layoutId={`child-${el}`}
+                          className="z-[2] flex items-center justify-center h-[50px] w-[50px] absolute bg-gray-300 rounded-[10px]"
+                        >
+                          {el}
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
