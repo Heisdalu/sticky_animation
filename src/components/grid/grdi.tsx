@@ -87,7 +87,7 @@ const Grid = () => {
                           exit={{
                             opacity: 0,
                             transition: {
-                              duration: 0.2,
+                              duration: 0.1,
                             },
                           }}
                           className={`rounded-[10px] flex items-center justify-center w-[100px] h-[100px] bg-gray-300`}
@@ -129,12 +129,14 @@ const Grid = () => {
                     <motion.div
                       key={"contain-1"}
                       initial={{
-                        y: -100,
+                        y: -80,
                       }}
                       animate={{
                         y: -20,
                         transition: {
                           delay: 0.2,
+                          type: "spring",
+                          bounce: 0.4,
                         },
                       }}
                       className="z-[2] h-[100%] w-[100%] flex items-center justify-center"
