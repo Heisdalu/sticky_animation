@@ -56,7 +56,7 @@ const Main = () => {
                 }}
                 initial={{
                   opacity: 0,
-                  y: -15,
+                  y: -10,
                 }}
                 animate={{
                   opacity: 1,
@@ -78,7 +78,7 @@ const Main = () => {
                   style={{
                     backgroundColor: `${el.color}`,
                   }}
-                  key={el.name}
+                  key={el.id}
                   className={`relative z-[10] text-[0.65rem] p-[5px] py-[3px] rounded-[7px]`}
                 >
                   {el.name}
