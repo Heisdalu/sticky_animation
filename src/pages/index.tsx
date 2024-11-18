@@ -13,10 +13,15 @@ import Mask from "@/components/mask/mian";
 import { Variants, motion } from "framer-motion";
 import Grid from "@/components/grid/grdi";
 import Cover from "@/components/Cover/Cover";
+import Twitter from "@/components/Twitter/man";
+
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const Index = () => {
   return (
-    <div className="">
+    <div className={inter.className}>
       {/* <Layout />
       <Lol />
       <Modal />
@@ -30,8 +35,9 @@ const Index = () => {
       {/* <Tut /> */}
       {/* <Mask /> */}
       {/* <div className="bg-gray-300 cen">Home is home</div> */}
-      <Grid />
+      {/* <Grid /> */}
       {/* <Cover /> */}
+      <Twitter />
     </div>
   );
 };
