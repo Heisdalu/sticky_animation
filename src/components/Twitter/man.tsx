@@ -36,8 +36,6 @@ const Main = () => {
     });
   };
 
-  //   console.log(userList, selectedList);
-
   return (
     <div className="h-[100vh] grid place-items-center">
       <div className="w-[300px]">
@@ -63,9 +61,6 @@ const Main = () => {
                 animate={{
                   opacity: 1,
                   y: 0,
-                  transition: {
-                    duration: 0.3,
-                  },
                 }}
                 exit={{
                   y: -5,
@@ -73,8 +68,8 @@ const Main = () => {
                 }}
                 className="flex items-center justify-center space-x-[3px] border-[0px] px-[3px]"
               >
-                <span className="text-[0.8rem]">Clear all</span>
-                <span className="text-[10px] translate-y-[1px]">{"×"}</span>
+                <span className="text-[0.6rem]">Clear all</span>
+                <span className="text-[10px]">{"×"}</span>
               </motion.button>
               {selectedList.map((el) => (
                 <motion.button
