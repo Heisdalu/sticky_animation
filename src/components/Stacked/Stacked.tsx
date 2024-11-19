@@ -57,19 +57,22 @@ const Stacked = () => {
 
   return (
     <div className="h-[100vh] grid place-items-center">
-      <div className="grid place-items-center rounded-[10px] h-[400px] w-[500px] border-[1px] border-gray-400">
+      <div className="grid place-items-center rounded-[10px] h-[400px] w-[500px] border-[1px] border-gray-300">
         <MotionConfig
           transition={{
             duration: 0.3,
             ease: "circInOut",
           }}
         >
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence mode="popLayout" initial={false}>
             {imageShow ? (
               <div
                 key={"first"}
                 className="h-[100%] w-[100%] grid place-items-center"
-                onClick={() => setImageShow(false)}
+                onClick={() => {
+                  setImageShow(false);
+                  setSelectedImage([]);
+                }}
               >
                 <div
                   ref={scope}
@@ -77,7 +80,7 @@ const Stacked = () => {
                   onMouseEnter={hovered}
                   onMouseLeave={leaving}
                 >
-                  {imgPath.slice(0).map((el, i) => (
+                  {selectedImage.map((el, i) => (
                     <motion.div
                       key={el}
                       layoutId={`${el}`}
@@ -103,6 +106,24 @@ const Stacked = () => {
                       />
                     </motion.div>
                   ))}
+                  <motion.div
+                    key={"dope_apes"}
+                    initial={{
+                      opacity: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: {
+                        duration: 0.1,
+                      },
+                    }}
+                    className="text-[0.8rem] text-center absolute left-[-15px] top-[calc(100%+7px)] w-[100px] border-[0px]"
+                  >
+                    {selectedImage.length} Dope Apes
+                  </motion.div>
                 </div>
               </div>
             ) : (
@@ -110,6 +131,8 @@ const Stacked = () => {
                 <div>
                   <motion.div
                     key={"images_headline"}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     exit={{
                       opacity: 0,
                       transition: {
@@ -146,18 +169,25 @@ const Stacked = () => {
                       </motion.span>
                     </AnimatePresence>
                   </motion.div>
+
                   <div className="py-[1.5rem] grid grid-cols-2 [grid-gap:7px]">
                     {imgPath.map((el) => (
                       <motion.div
-                        key={el}
+                        key={`first-card-${el}`}
                         className="relative cursor-pointer"
                         layoutId={`${el}`}
-                        exit={{
-                          opacity: 1,
-                          transition: {
-                            duration: 0.00000000001,
-                          },
-                        }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={
+                          !selectedImage.includes(el)
+                            ? {
+                                opacity: 0,
+                                transition: {
+                                  duration: 0.1,
+                                },
+                              }
+                            : {}
+                        }
                         onClick={() => clickedFunc(el)}
                       >
                         <motion.div
@@ -168,7 +198,11 @@ const Stacked = () => {
                               duration: 1,
                             },
                           }}
-                          className="absolute top-[4px] right-[3px] h-[15px] w-[15px] border-[1px] border-gray-200 rounded-full"
+                          className={`absolute top-[4px] right-[3px] h-[15px] w-[15px] ${
+                            selectedImage.includes(el)
+                              ? "border-[0]"
+                              : "border-[1px] border-gray-200"
+                          } border-[1px]  rounded-full`}
                         >
                           <motion.div
                             initial={{
