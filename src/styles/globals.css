@@ -71,3 +71,7 @@ body {
 .cent {
   @apply h-[100vh] grid place-items-center;
 }
+
+/* .d {
+  color:#d1d5db
+} */

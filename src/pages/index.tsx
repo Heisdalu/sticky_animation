@@ -16,6 +16,7 @@ import Cover from "@/components/Cover/Cover";
 import Twitter from "@/components/Twitter/man";
 
 import { Inter } from "next/font/google";
+import Stacked from "@/components/Stacked/Stacked";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,7 +38,8 @@ const Index = () => {
       {/* <div className="bg-gray-300 cen">Home is home</div> */}
       {/* <Grid /> */}
       {/* <Cover /> */}
-      <Twitter />
+      {/* <Twitter /> */}
+      <Stacked />
     </div>
   );
 };
