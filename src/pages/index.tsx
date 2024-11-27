@@ -14,6 +14,7 @@ import { Variants, motion } from "framer-motion";
 import Grid from "@/components/grid/grdi";
 import Cover from "@/components/Cover/Cover";
 import Twitter from "@/components/Twitter/man";
+import Tab from "@/components/Tab/index";
 
 import { Inter } from "next/font/google";
 import Stacked from "@/components/Stacked/Stacked";
@@ -39,7 +40,8 @@ const Index = () => {
       {/* <Grid /> */}
       {/* <Cover /> */}
       {/* <Twitter /> */}
-      <Stacked />
+      {/* <Stacked /> */}
+      <Tab />
     </div>
   );
 };

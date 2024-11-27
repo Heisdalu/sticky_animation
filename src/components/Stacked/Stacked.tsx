@@ -103,6 +103,7 @@ const Stacked = () => {
                         height={70}
                         width={70}
                         src={`/${el}`}
+                        priority
                       />
                     </motion.div>
                   ))}
@@ -229,6 +230,7 @@ const Stacked = () => {
                           className="rounded-[10px]"
                           src={`/${el}`}
                           alt=""
+                          priority
                         />
                       </motion.div>
                     ))}
